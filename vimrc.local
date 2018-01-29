@@ -1,0 +1,75 @@
+" Tabbing
+" map <C-p> :tabprevious<cr>
+" map <C-n> :tabnext<cr>
+"
+" nnoremap <C-Left> :tabprevious<CR>
+" nnoremap <C-Right> :tabnext<CR>
+" nnoremap <silent> <A-Left> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
+" nnoremap <silent> <A-Right> :execute 'silent! tabmove ' . tabpagenr()<CR>
+"
+au BufNewFile,BufReadPost,FilterReadPost,FileReadPost  * set nospell
+"
+"set guifont=Menlo\ Regular:h18
+"set guifont=PT\ Mono:h18
+"set guifont=Monaco:h16
+set path+=**
+
+" set guioptions-=m  "remove menu bar
+" set guioptions-=T  "remove toolbar
+" set guioptions-=r  "remove right-hand scroll bar
+" set guioptions-=L  "remove left-hand scroll bar
+
+let $GOPATH="/home/fsoppelsa/go"
+
+au! BufRead,BufNewFile *.go setfiletype go
+
+"colorscheme google
+"colorscheme github
+" colorscheme PaperColor
+"colorscheme solarized
+"set background=light
+colorscheme dracula
+
+let g:spf13_bundle_groups=['general', 'python', 'writing', 'programming', 'go']
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go']  }
+let g:indent_guides_guide_size=1
+let g:spf13_no_omni_complete = 1
+
+set nospell
+
+" Go
+"
+set autowrite
+map <C-n> :cnext<CR>
+map <C-m> :cprevious<CR>
+nnoremap <leader>a :cclose<CR>
+autocmd FileType go nmap <leader>r  <Plug>(go-run)
+autocmd FileType go nmap <leader>t  <Plug>(go-test)
+autocmd FileType go nmap <Leader>c <Plug>(go-coverage-toggle)
+let g:go_list_type = "quickfix"
+let g:go_test_timeout = '10s'
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_types = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+let g:go_fmt_command = "goimports"
+" run :GoBuild or :GoTestCompile based on the go file
+function! s:build_go_files()
+  let l:file = expand('%')
+  if l:file =~# '^\f\+_test\.go$'
+    call go#test#Test(0, 1)
+  elseif l:file =~# '^\f\+\.go$'
+    call go#cmd#Build(0)
+  endif
+endfunction
+
+autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
+
+let mapleader = ','
+autocmd FileType go map <leader>go :w<CR>:GoRun<enter>
+autocmd FileType python set tabstop=8 expandtab shiftwidth=4 softtabstop=4
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+
