@@ -12,6 +12,7 @@ let g:spf13_no_omni_complete = 1
 " Code maps
 nmap <Leader>n :cnext<CR>
 nmap <Leader>p :cprevious<CR>
+map :a :Ack!
 
 " Tabs
 nmap <silent> <C-k> :tabnext<CR>
