@@ -8,6 +8,9 @@ let g:spf13_bundle_groups=['general', 'python', 'writing', 'programming', 'go', 
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go', 'python', 'c']  }
 let g:indent_guides_guide_size=1
 let g:spf13_no_omni_complete = 1
+set nobackup
+set nowritebackup
+set noswapfile
 
 " Code maps
 nmap <Leader>n :cnext<CR>
