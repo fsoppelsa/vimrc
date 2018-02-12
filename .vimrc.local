@@ -12,6 +12,8 @@ set nobackup
 set nowritebackup
 set noswapfile
 
+tnoremap <Esc> <C-\><C-n>
+
 " Code maps
 nmap <Leader>n :cnext<CR>
 nmap <Leader>p :cprevious<CR>
@@ -41,8 +43,15 @@ autocmd FileType c nmap <leader>r :!gcc % && ./a.out <CR>
 
 " Go
 "
-let $GOPATH="/home/fsoppelsa/go"
 au! BufRead,BufNewFile *.go setfiletype go
+if has("unix")
+    let s:uname = system("uname")
+    if s:uname == "Darwin\n"
+		let $GOPATH="/Users/fsoppelsa/go"
+	elseif s:uname == "Linux\n"
+		let $GOPATH="/home/fsoppelsa/go"
+    endif
+  endif
 
 nnoremap <leader>a :cclose<CR>
 autocmd FileType go nmap <leader>r <Plug>(go-run)
@@ -59,6 +68,7 @@ let g:go_highlight_fields = 1
 let g:go_highlight_types = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
+"let g:go_term_mode = "split"
 let g:go_fmt_command = "goimports"
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
@@ -73,3 +83,6 @@ autocmd FileType go map <leader>go :w<CR>:GoRun<enter>
 autocmd FileType python set tabstop=8 expandtab shiftwidth=4 softtabstop=4
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 
+" Neoterm
+let g:neoterm_position = 'vertical'
+let g:neoterm_automap_keys = ',n'
