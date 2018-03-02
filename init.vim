@@ -2,7 +2,6 @@
 let g:spacevim_enable_debug = 0
 let g:spacevim_realtime_leader_guide = 1
 let g:spacevim_colorscheme = "NeoSolarized"
-let g:spacevim_guifont = 'DejaVu\ Sans\ Mono\ for\ Powerline\ 20'
 let g:spacevim_filemanager = 'nerdtree'
 call SpaceVim#layers#load('incsearch')
 call SpaceVim#layers#load('autocomplete')

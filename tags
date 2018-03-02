@@ -1,9 +1,10 @@
 !_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
 !_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
-!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
-!_TAG_PROGRAM_NAME	Exuberant Ctags	//
-!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
-!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/c04ceb8/
 <C-p>	init.vim	/^    nnoremap <silent> <C-p> :Denite file_rec<CR>$/;"	m
 <leader>a	init.vim	/^nnoremap <leader>a :cclose<CR>$/;"	m
 FastEscape	nvim/init.vim	/^    augroup FastEscape$/;"	a
@@ -31,6 +32,5 @@ g:spacevim_enable_statusline_display_mode	init.vim	/^let g:spacevim_enable_statu
 g:spacevim_enable_tabline_filetype_icon	init.vim	/^let g:spacevim_enable_tabline_filetype_icon = 1$/;"	v
 g:spacevim_enable_vimfiler_welcome	init.vim	/^let g:spacevim_enable_vimfiler_welcome = 1$/;"	v
 g:spacevim_filemanager	init.vim	/^let g:spacevim_filemanager = 'nerdtree'$/;"	v
-g:spacevim_guifont	init.vim	/^let g:spacevim_guifont = 'DejaVu\\ Sans\\ Mono\\ for\\ Powerline\\ 20'$/;"	v
 g:spacevim_realtime_leader_guide	init.vim	/^let g:spacevim_realtime_leader_guide = 1$/;"	v
 g:syntastic_go_checkers	init.vim	/^let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']$/;"	v
