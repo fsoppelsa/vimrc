@@ -3,6 +3,7 @@ let g:spacevim_enable_debug = 0
 let g:spacevim_realtime_leader_guide = 1
 let g:spacevim_colorscheme = "NeoSolarized"
 let g:spacevim_guifont = 'DejaVu\ Sans\ Mono\ for\ Powerline\ 20'
+let g:spacevim_filemanager = 'nerdtree'
 call SpaceVim#layers#load('incsearch')
 call SpaceVim#layers#load('autocomplete')
 call SpaceVim#layers#load('git')
@@ -34,6 +35,8 @@ let g:spacevim_enable_statusline_display_mode = 0
 let g:spacevim_enable_os_fileformat_icon = 1
 let g:spacevim_buffer_index_type = 1
 let g:neomake_vim_enabled_makers = []
+autocmd FileType go nmap <Leader>q :DlvAddBreakpoint <CR>
+autocmd FileType go nmap <Leader>d :DlvDebug <CR>
 if executable('vimlint')
     call add(g:neomake_vim_enabled_makers, 'vimlint') 
 endif
@@ -46,6 +49,7 @@ if has('python3')
 endif
 let g:clang2_placeholder_next = ''
 let g:clang2_placeholder_prev = ''
+nnoremap <leader>a :cclose<CR>
 
 " Go
 let g:go_list_type = "quickfix"
