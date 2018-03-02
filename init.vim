@@ -2,7 +2,6 @@
 let g:spacevim_enable_debug = 0
 let g:spacevim_realtime_leader_guide = 1
 let g:spacevim_colorscheme = "NeoSolarized"
-let g:spacevim_guifont = 'DejaVu\ Sans\ Mono\ for\ Powerline\ 20'
 call SpaceVim#layers#load('incsearch')
 call SpaceVim#layers#load('autocomplete')
 call SpaceVim#layers#load('git')
@@ -12,20 +11,10 @@ call SpaceVim#layers#load('tags')
 call SpaceVim#layers#load('lang#go')
 call SpaceVim#layers#load('shell')   
 call SpaceVim#layers#load('tools#screensaver')
-"call SpaceVim#layers#load('lang#c')
-"call SpaceVim#layers#load('lang#elixir')
-"call SpaceVim#layers#load('lang#haskell')
-"call SpaceVim#layers#load('lang#java')
-"call SpaceVim#layers#load('lang#javascript')
-"call SpaceVim#layers#load('lang#lua')
-"call SpaceVim#layers#load('lang#perl')
-"call SpaceVim#layers#load('lang#php')
-"call SpaceVim#layers#load('lang#python')
-"call SpaceVim#layers#load('lang#rust')
-"call SpaceVim#layers#load('lang#swig')
-"call SpaceVim#layers#load('lang#tmux')
-"call SpaceVim#layers#load('lang#vim')
-"call SpaceVim#layers#load('lang#xml')
+let g:spacevim_custom_plugins = [
+        \ ['sebdah/vim-delve'],
+        \ ['christoomey/vim-tmux-navigator'],
+        \ ]
 let g:spacevim_enable_vimfiler_welcome = 1
 let g:spacevim_enable_debug = 0
 let g:deoplete#auto_complete_delay = 150
@@ -61,4 +50,19 @@ let g:go_fmt_command = "goimports"
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
 autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
+
+"call SpaceVim#layers#load('lang#c')
+"call SpaceVim#layers#load('lang#elixir')
+"call SpaceVim#layers#load('lang#haskell')
+"call SpaceVim#layers#load('lang#java')
+"call SpaceVim#layers#load('lang#javascript')
+"call SpaceVim#layers#load('lang#lua')
+"call SpaceVim#layers#load('lang#perl')
+"call SpaceVim#layers#load('lang#php')
+"call SpaceVim#layers#load('lang#python')
+"call SpaceVim#layers#load('lang#rust')
+"call SpaceVim#layers#load('lang#swig')
+"call SpaceVim#layers#load('lang#tmux')
+"call SpaceVim#layers#load('lang#vim')
+"call SpaceVim#layers#load('lang#xml')
 
