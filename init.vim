@@ -9,10 +9,15 @@ call SpaceVim#layers#load('incsearch')
 call SpaceVim#layers#load('autocomplete')
 call SpaceVim#layers#load('git')
 call SpaceVim#layers#load('github')
-call SpaceVim#layers#load('debug')
 call SpaceVim#layers#load('tags')
 call SpaceVim#layers#load('lang#go')
 call SpaceVim#layers#load('shell')   
+call SpaceVim#layers#load('shell',
+        \ {
+        \ 'default_position' : 'bottom',
+        \ 'default_height' : 8,
+        \ }
+        \ )
 call SpaceVim#layers#load('tools#screensaver')
 let g:spacevim_custom_plugins = [
         \ ['sebdah/vim-delve'],
@@ -57,6 +62,7 @@ let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
 autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
 
+"call SpaceVim#layers#load('debug')
 "call SpaceVim#layers#load('lang#c')
 "call SpaceVim#layers#load('lang#elixir')
 "call SpaceVim#layers#load('lang#haskell')
@@ -71,4 +77,3 @@ autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
 "call SpaceVim#layers#load('lang#tmux')
 "call SpaceVim#layers#load('lang#vim')
 "call SpaceVim#layers#load('lang#xml')
-
