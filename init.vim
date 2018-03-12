@@ -4,14 +4,14 @@ let g:spacevim_realtime_leader_guide = 1
 let g:spacevim_colorscheme = "NeoSolarized"
 let g:spacevim_filemanager = 'nerdtree'
 let NERDTreeQuitOnOpen=1
-set noautochdir
+set autochdir
 call SpaceVim#layers#load('incsearch')
 call SpaceVim#layers#load('autocomplete')
 call SpaceVim#layers#load('git')
 call SpaceVim#layers#load('github')
 call SpaceVim#layers#load('tags')
 call SpaceVim#layers#load('lang#go')
-call SpaceVim#layers#load('shell')   
+call SpaceVim#layers#load('lang#c')
 call SpaceVim#layers#load('shell',
         \ {
         \ 'default_position' : 'bottom',
@@ -71,7 +71,7 @@ autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
 "call SpaceVim#layers#load('lang#lua')
 "call SpaceVim#layers#load('lang#perl')
 "call SpaceVim#layers#load('lang#php')
-"call SpaceVim#layers#load('lang#python')
+call SpaceVim#layers#load('lang#python')
 "call SpaceVim#layers#load('lang#rust')
 "call SpaceVim#layers#load('lang#swig')
 "call SpaceVim#layers#load('lang#tmux')
