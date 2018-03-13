@@ -12,6 +12,7 @@ call SpaceVim#layers#load('github')
 call SpaceVim#layers#load('tags')
 call SpaceVim#layers#load('lang#go')
 call SpaceVim#layers#load('lang#c')
+call SpaceVim#layers#load('lang#python')
 call SpaceVim#layers#load('shell',
         \ {
         \ 'default_position' : 'bottom',
@@ -71,7 +72,6 @@ autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
 "call SpaceVim#layers#load('lang#lua')
 "call SpaceVim#layers#load('lang#perl')
 "call SpaceVim#layers#load('lang#php')
-call SpaceVim#layers#load('lang#python')
 "call SpaceVim#layers#load('lang#rust')
 "call SpaceVim#layers#load('lang#swig')
 "call SpaceVim#layers#load('lang#tmux')
