@@ -12,6 +12,7 @@ call SpaceVim#layers#load('git')
 call SpaceVim#layers#load('github')
 call SpaceVim#layers#load('incsearch')
 call SpaceVim#layers#load('tags')
+call SpaceVim#layers#load('VersionControl')
 call SpaceVim#layers#load('lang#go')
 " The lang#c extension requires for deoplete-clang2
 " Ubuntu - the `clang` package, clang-check command
