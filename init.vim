@@ -4,10 +4,13 @@ let g:spacevim_colorscheme = "NeoSolarized"
 let g:spacevim_filemanager = 'nerdtree'
 let NERDTreeQuitOnOpen=1
 set autochdir
-call SpaceVim#layers#load('incsearch')
 call SpaceVim#layers#load('autocomplete')
+call SpaceVim#layers#load('colorscheme')
+call SpaceVim#layers#load('denite')
+call SpaceVim#layers#load('fzf')
 call SpaceVim#layers#load('git')
 call SpaceVim#layers#load('github')
+call SpaceVim#layers#load('incsearch')
 call SpaceVim#layers#load('tags')
 call SpaceVim#layers#load('lang#go')
 " The lang#c extension requires for deoplete-clang2
@@ -64,7 +67,6 @@ let g:go_fmt_command = "goimports"
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
 autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
-
 "call SpaceVim#layers#load('debug')
 "call SpaceVim#layers#load('lang#elixir')
 "call SpaceVim#layers#load('lang#haskell')
