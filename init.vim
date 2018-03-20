@@ -1,9 +1,10 @@
+set autochdir
+set noswapfile
 let g:spacevim_enable_debug = 0
 let g:spacevim_realtime_leader_guide = 1
 let g:spacevim_colorscheme = "NeoSolarized"
 let g:spacevim_filemanager = 'nerdtree'
 let NERDTreeQuitOnOpen=1
-set autochdir
 call SpaceVim#layers#load('autocomplete')
 call SpaceVim#layers#load('colorscheme')
 call SpaceVim#layers#load('denite')
@@ -13,12 +14,17 @@ call SpaceVim#layers#load('github')
 call SpaceVim#layers#load('incsearch')
 call SpaceVim#layers#load('tags')
 call SpaceVim#layers#load('VersionControl')
+" The lang#go extension requires for deoplete-go
+" go get -u github.com/nsf/gocode
+" MacOS - brew install global --with-pygments --with-ctags
 call SpaceVim#layers#load('lang#go')
 " The lang#c extension requires for deoplete-clang2
-" Ubuntu - the `clang` package, clang-check command
+" Linux - the `clang` package, clang-check command
 " MacOS - brew install clang-format
 call SpaceVim#layers#load('lang#c')
+" lang#python is the slowest loading on Mac
 call SpaceVim#layers#load('lang#python')
+" Does not support resize?
 call SpaceVim#layers#load('shell',
         \ {
         \ 'default_position' : 'bottom',
