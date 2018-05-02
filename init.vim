@@ -5,15 +5,21 @@ let g:spacevim_realtime_leader_guide = 1
 let g:spacevim_colorscheme = "NeoSolarized"
 let g:spacevim_filemanager = 'nerdtree'
 let NERDTreeQuitOnOpen=1
+let g:clamp_autostart = 0
+call SpaceVim#layers#load('VersionControl')
 call SpaceVim#layers#load('autocomplete')
+call SpaceVim#layers#load('checkers')
 call SpaceVim#layers#load('colorscheme')
+call SpaceVim#layers#load('ctrlp')
+"call SpaceVim#layers#load('debug')
+call SpaceVim#layers#load('default')
 call SpaceVim#layers#load('denite')
 call SpaceVim#layers#load('fzf')
 call SpaceVim#layers#load('git')
 call SpaceVim#layers#load('github')
 call SpaceVim#layers#load('incsearch')
 call SpaceVim#layers#load('tags')
-call SpaceVim#layers#load('VersionControl')
+"call SpaceVim#layers#load('unite')
 " The lang#go extension requires for deoplete-go
 " go get -u github.com/nsf/gocode
 " MacOS - brew install global --with-pygments --with-ctags
@@ -21,9 +27,9 @@ call SpaceVim#layers#load('lang#go')
 " The lang#c extension requires for deoplete-clang2
 " Linux - the `clang` package, clang-check command
 " MacOS - brew install clang-format
-call SpaceVim#layers#load('lang#c')
+"call SpaceVim#layers#load('lang#c')
 " lang#python is the slowest loading on Mac
-call SpaceVim#layers#load('lang#python')
+"call SpaceVim#layers#load('lang#python')
 " Does not support resize?
 call SpaceVim#layers#load('shell',
         \ {
@@ -31,7 +37,7 @@ call SpaceVim#layers#load('shell',
         \ 'default_height' : 8,
         \ }
         \ )
-call SpaceVim#layers#load('tools#screensaver')
+"call SpaceVim#layers#load('tools#screensaver')
 let g:spacevim_custom_plugins = [
         \ ['sebdah/vim-delve'],
         \ ['christoomey/vim-tmux-navigator'],
@@ -74,7 +80,6 @@ let g:go_fmt_command = "goimports"
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
 autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
-"call SpaceVim#layers#load('debug')
 "call SpaceVim#layers#load('lang#elixir')
 "call SpaceVim#layers#load('lang#haskell')
 "call SpaceVim#layers#load('lang#java')
