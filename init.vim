@@ -1,5 +1,7 @@
 set autochdir
 set noswapfile
+let g:python_host_skip_check = 1
+let g:python3_host_skip_check = 1
 let g:spacevim_enable_debug = 0
 let g:spacevim_realtime_leader_guide = 1
 let g:spacevim_colorscheme = "NeoSolarized"
@@ -27,7 +29,7 @@ call SpaceVim#layers#load('lang#go')
 " The lang#c extension requires for deoplete-clang2
 " Linux - the `clang` package, clang-check command
 " MacOS - brew install clang-format
-"call SpaceVim#layers#load('lang#c')
+call SpaceVim#layers#load('lang#c')
 " lang#python is the slowest loading on Mac
 "call SpaceVim#layers#load('lang#python')
 " Does not support resize?
