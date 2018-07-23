@@ -1,10 +1,12 @@
 set autochdir
 set noswapfile
+let guifont = 'DejaVu Sans Mono for Powerline:h20'
 let g:python_host_skip_check = 1
 let g:python3_host_skip_check = 1
 let g:spacevim_enable_debug = 0
 let g:spacevim_realtime_leader_guide = 1
-let g:spacevim_colorscheme = "NeoSolarized"
+let g:spacevim_colorscheme = "dracula"
+"let g:spacevim_colorscheme_bg = "light"
 let g:spacevim_filemanager = 'nerdtree'
 let NERDTreeQuitOnOpen=1
 let g:clamp_autostart = 0
@@ -21,6 +23,7 @@ call SpaceVim#layers#load('git')
 call SpaceVim#layers#load('github')
 call SpaceVim#layers#load('incsearch')
 call SpaceVim#layers#load('tags')
+call SpaceVim#layers#load('lang#vim')
 "call SpaceVim#layers#load('unite')
 " The lang#go extension requires for deoplete-go
 " go get -u github.com/nsf/gocode
@@ -29,7 +32,7 @@ call SpaceVim#layers#load('lang#go')
 " The lang#c extension requires for deoplete-clang2
 " Linux - the `clang` package, clang-check command
 " MacOS - brew install clang-format
-call SpaceVim#layers#load('lang#c')
+" call SpaceVim#layers#load('lang#c')
 " lang#python is the slowest loading on Mac
 "call SpaceVim#layers#load('lang#python')
 " Does not support resize?
@@ -92,5 +95,4 @@ autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
 "call SpaceVim#layers#load('lang#rust')
 "call SpaceVim#layers#load('lang#swig')
 "call SpaceVim#layers#load('lang#tmux')
-"call SpaceVim#layers#load('lang#vim')
 "call SpaceVim#layers#load('lang#xml')
