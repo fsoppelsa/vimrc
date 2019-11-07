@@ -8,22 +8,17 @@
 
 # All SpaceVim option below [option] section
 [options]
-    # set spacevim theme. by default colorscheme layer is not loaded,
-    # if you want to use more colorscheme, please load the colorscheme
-    # layer
     # Disable guicolors in basic mode, many terminal do not support 24bit
-    # true colors
-    #enable_guicolors = false
-    # Disable statusline separator, if you want to use other value, please
     # install nerd fonts
+    #termguicolors = true
     colorscheme = "dracula"
-    background = "dark"
-    dracula_italic = 0
+    colorscheme_bg = "dark"
     statusline_separator = "arrow"
     statusline_inactive_separator = "arrow"
     buffer_index_type = 4
     enable_tabline_filetype_icon = true
     enable_statusline_mode = false
+    filemanager = "nerdtree"
 
 # Enable autocomplete layer
 [[layers]]
@@ -43,12 +38,16 @@ name = "colorscheme"
 name = "lang#go"
 
 [[layers]]
+name = "lang#python"
+
+[[layers]]
 name = "fzf"
 
 [[layers]]
 name = "gtags"
 
+[[layers]]
+name = "lang#sh"
+
 [[custom_plugins]]
 name = "dracula/vim"
-
-
