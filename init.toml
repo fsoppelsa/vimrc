@@ -11,7 +11,7 @@
     # Disable guicolors in basic mode, many terminal do not support 24bit
     # install nerd fonts
     #termguicolors = true
-    colorscheme = "dracula"
+    colorscheme = "gruvbox"
     colorscheme_bg = "dark"
     statusline_separator = "arrow"
     statusline_inactive_separator = "arrow"
@@ -50,4 +50,4 @@ name = "gtags"
 name = "lang#sh"
 
 [[custom_plugins]]
-name = "dracula/vim"
+name = "vim-scripts/gruvbox"
